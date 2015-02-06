@@ -22,6 +22,7 @@ EnemigoAzul::~EnemigoAzul()
 
 void EnemigoAzul::act()
 {
+    rect.x++;
 }
 
 
