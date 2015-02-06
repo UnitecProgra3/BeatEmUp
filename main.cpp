@@ -4,6 +4,7 @@
 #include<iostream>
 #include<vector>
 #include "Sho.h"
+#include "EnemigoAzul.h"
 
 using namespace std;
 
@@ -44,6 +45,7 @@ int main( int argc, char* args[] )
     rect_background.h = h;
 
     Sho sho(renderer);
+    EnemigoAzul e(renderer);
 
     //Main Loop
     int frame=0;
@@ -60,6 +62,7 @@ int main( int argc, char* args[] )
         }
 
         sho.act();
+        e.act();
 
         SDL_SetRenderDrawColor(renderer, 255, 100, 0, 255);
 
@@ -69,6 +72,7 @@ int main( int argc, char* args[] )
         SDL_RenderCopy(renderer, background, NULL, &rect_background);
 
         sho.draw(renderer);
+        e.draw(renderer);
 
         SDL_RenderPresent(renderer);
 
