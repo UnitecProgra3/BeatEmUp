@@ -12,7 +12,7 @@ EnemigoRojo::EnemigoRojo(SDL_Renderer* renderer)
     rect.y = 250;
 
     frame = 0;
-    animacion_enemigo = 0;
+    animacion = 0;
 
     hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
     hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");

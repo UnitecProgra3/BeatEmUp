@@ -576,29 +576,35 @@
 1422648136 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Sho.cpp
 	"Sho.h"
 
-1423849494 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Enemigo.cpp
+1423852183 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Enemigo.cpp
 	"Enemigo.h"
 
-1423850737 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Enemigo.h
-	<SDL2/SDL.h>
-	<SDL2/SDL_image.h>
-	<vector>
+1423852523 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Enemigo.h
+	"Personaje.h"
 
 1423248725 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoAzul.h
 	"Enemigo.h"
 
-1423849438 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoAzul.cpp
+1423852188 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoAzul.cpp
 	"EnemigoAzul.h"
 
-1423849448 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoRojo.cpp
+1423852191 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoRojo.cpp
 	"EnemigoRojo.h"
 
 1423250451 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoRojo.h
 	"Enemigo.h"
 
-1423849449 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoVerde.cpp
+1423852196 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoVerde.cpp
 	"EnemigoVerde.h"
 
 1423250236 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/EnemigoVerde.h
 	"Enemigo.h"
+
+1423852529 /home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Personaje.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+
+1423852224 source:/home/turupawn/Projects/Clases/Progra3/SDL2TestSimple-master/Personaje.cpp
+	"Personaje.h"
 
