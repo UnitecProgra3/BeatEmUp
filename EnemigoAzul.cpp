@@ -13,6 +13,8 @@ EnemigoAzul::EnemigoAzul(SDL_Renderer* renderer)
 
     frame = 0;
     animacion_enemigo = 0;
+    hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
+    hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");
 }
 
 EnemigoAzul::~EnemigoAzul()
@@ -23,6 +25,10 @@ EnemigoAzul::~EnemigoAzul()
 void EnemigoAzul::act()
 {
     rect.x++;
+    if(frame%100==0)
+        atacando = true;
+    else
+        atacando = false;
 }
 
 

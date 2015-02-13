@@ -10,9 +10,12 @@ class Enemigo
 {
     public:
         vector<SDL_Texture*>texturas;
-        SDL_Rect rect;
+        SDL_Texture* hitbox_azul;
+        SDL_Texture* hitbox_roja;
+        SDL_Rect rect,hitbox;
         int frame;
         int animacion_enemigo;
+        bool atacando;
 
         Enemigo();
         virtual ~Enemigo();

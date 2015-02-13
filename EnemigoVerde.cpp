@@ -13,6 +13,9 @@ EnemigoVerde::EnemigoVerde(SDL_Renderer* renderer)
 
     frame = 0;
     animacion_enemigo = 0;
+
+    hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
+    hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");
 }
 
 EnemigoVerde::~EnemigoVerde()
