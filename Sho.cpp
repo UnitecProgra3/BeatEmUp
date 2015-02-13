@@ -2,29 +2,17 @@
 
 Sho::Sho(SDL_Renderer* renderer)
 {
-    sho_standing.push_back(IMG_LoadTexture(renderer,"Sho/standing/1.png"));
-    sho_standing.push_back(IMG_LoadTexture(renderer,"Sho/standing/2.png"));
-    sho_standing.push_back(IMG_LoadTexture(renderer,"Sho/standing/3.png"));
-    sho_standing.push_back(IMG_LoadTexture(renderer,"Sho/standing/4.png"));
+    texturas.push_back(IMG_LoadTexture(renderer,"Sho/standing/1.png"));
+    texturas.push_back(IMG_LoadTexture(renderer,"Sho/standing/2.png"));
+    texturas.push_back(IMG_LoadTexture(renderer,"Sho/standing/3.png"));
+    texturas.push_back(IMG_LoadTexture(renderer,"Sho/standing/4.png"));
 
-    SDL_QueryTexture(sho_standing[0], NULL, NULL, &rect.w, &rect.h);
+    SDL_QueryTexture(texturas[0], NULL, NULL, &rect.w, &rect.h);
     rect.x = 100;
     rect.y = 250;
 
     frame = 0;
-    animacion_sho = 0;
-}
-
-void Sho::draw(SDL_Renderer* renderer)
-{
-    SDL_RenderCopy(renderer, sho_standing[animacion_sho], NULL, &rect);
-    if(frame%100==0)
-    {
-        animacion_sho++;
-        if(animacion_sho>=sho_standing.size())
-            animacion_sho=0;
-    }
-    frame++;
+    animacion = 0;
 }
 
 void Sho::act()

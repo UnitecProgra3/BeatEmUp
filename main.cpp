@@ -47,13 +47,12 @@ int main( int argc, char* args[] )
     rect_background.w = w;
     rect_background.h = h;
 
-    Sho sho(renderer);
 
-
-    list<Enemigo*> enemigos;
-    enemigos.push_back(new EnemigoAzul(renderer));
-    enemigos.push_back(new EnemigoVerde(renderer));
-    enemigos.push_back(new EnemigoRojo(renderer));
+    list<Personaje*> personajes;
+    personajes.push_back(new Sho(renderer));
+    personajes.push_back(new EnemigoAzul(renderer));
+    personajes.push_back(new EnemigoVerde(renderer));
+    personajes.push_back(new EnemigoRojo(renderer));
 
     //Main Loop
     int frame=0;
@@ -71,15 +70,13 @@ int main( int argc, char* args[] )
 
         if(frame%200==0)
         {
-            enemigos.push_back(new EnemigoAzul(renderer));
+            personajes.push_back(new EnemigoAzul(renderer));
         }
 
-        sho.act();
-
-        for(list<Enemigo*>::iterator e=enemigos.begin();
-                e!=enemigos.end();
-                e++)
-            (*e)->act();
+        for(list<Personaje*>::iterator p=personajes.begin();
+                p!=personajes.end();
+                p++)
+            (*p)->act();
 
         SDL_SetRenderDrawColor(renderer, 255, 100, 0, 255);
 
@@ -88,12 +85,10 @@ int main( int argc, char* args[] )
 
         SDL_RenderCopy(renderer, background, NULL, &rect_background);
 
-        sho.draw(renderer);
-
-        for(list<Enemigo*>::iterator e=enemigos.begin();
-                e!=enemigos.end();
-                e++)
-            (*e)->draw(renderer);
+        for(list<Personaje*>::iterator p=personajes.begin();
+                p!=personajes.end();
+                p++)
+            (*p)->draw(renderer);
 
         SDL_RenderPresent(renderer);
 
