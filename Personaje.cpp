@@ -44,3 +44,16 @@ void Personaje::init(SDL_Renderer* renderer, list<Personaje*> *personajes)
     this->personajes = personajes;
 }
 
+bool Personaje::colision(SDL_Rect param)
+{
+    if(param.x + param.w < rect.x
+        || param.x > rect.x + rect.w
+        || param.y + param.h < rect.y
+        || param.y > rect.y + rect.h)
+        return false;
+    else
+        return true;
+}
+
+
+

@@ -5,6 +5,7 @@
 #include<SDL2/SDL_image.h>
 #include <vector>
 #include <list>
+#include <iostream>
 using namespace std;
 
 class Personaje
@@ -22,6 +23,7 @@ class Personaje
         virtual void draw(SDL_Renderer* renderer);
         virtual void act()=0;
         void init(SDL_Renderer* renderer, list<Personaje*> *personajes);
+        bool colision(SDL_Rect param);
 
         Personaje();
         virtual ~Personaje();
