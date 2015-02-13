@@ -6,7 +6,7 @@
 class Sho : public Personaje
 {
     public:
-        Sho(SDL_Renderer* renderer);
+        Sho(SDL_Renderer* renderer,list<Personaje*> *personajes);
         void act();
         virtual ~Sho();
     protected:

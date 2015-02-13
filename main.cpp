@@ -49,10 +49,10 @@ int main( int argc, char* args[] )
 
 
     list<Personaje*> personajes;
-    personajes.push_back(new Sho(renderer));
-    personajes.push_back(new EnemigoAzul(renderer));
-    personajes.push_back(new EnemigoVerde(renderer));
-    personajes.push_back(new EnemigoRojo(renderer));
+    personajes.push_back(new Sho(renderer,&personajes));
+    personajes.push_back(new EnemigoAzul(renderer,&personajes));
+    personajes.push_back(new EnemigoVerde(renderer,&personajes));
+    personajes.push_back(new EnemigoRojo(renderer,&personajes));
 
     //Main Loop
     int frame=0;
@@ -70,7 +70,7 @@ int main( int argc, char* args[] )
 
         if(frame%200==0)
         {
-            personajes.push_back(new EnemigoAzul(renderer));
+            personajes.push_back(new EnemigoAzul(renderer,&personajes));
         }
 
         for(list<Personaje*>::iterator p=personajes.begin();

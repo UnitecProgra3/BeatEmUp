@@ -6,7 +6,7 @@
 class EnemigoRojo : public Enemigo
 {
     public:
-        EnemigoRojo(SDL_Renderer* renderer);
+        EnemigoRojo(SDL_Renderer* renderer,list<Personaje*> *personajes);
         virtual ~EnemigoRojo();
 
         void act();

@@ -31,3 +31,16 @@ void Personaje::draw(SDL_Renderer* renderer)
 //    hitbox.h++;
 //    hitbox.w++;
 }
+
+void Personaje::init(SDL_Renderer* renderer, list<Personaje*> *personajes)
+{
+    SDL_QueryTexture(texturas[0], NULL, NULL, &rect.w, &rect.h);
+
+    frame = 0;
+    animacion = 0;
+    hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
+    hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");
+
+    this->personajes = personajes;
+}
+
