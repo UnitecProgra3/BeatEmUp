@@ -14,7 +14,7 @@ Personaje::~Personaje()
 
 void Personaje::draw(SDL_Renderer* renderer)
 {
-    SDL_RenderCopy(renderer, texturas[animacion], NULL, &rect);
+    SDL_RenderCopy(renderer, texturas_left[animacion], NULL, &rect);
     if(frame%100==0)
     {
         animacion++;

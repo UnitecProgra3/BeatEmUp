@@ -13,6 +13,8 @@ class Personaje
     public:
         list<Personaje*> *personajes;
         vector<SDL_Texture*>texturas;
+        vector<SDL_Texture*>texturas_left;
+        vector<SDL_Texture*>texturas_right;
         SDL_Texture* hitbox_azul;
         SDL_Texture* hitbox_roja;
         SDL_Rect rect,hitbox;
