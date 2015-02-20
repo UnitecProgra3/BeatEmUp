@@ -6,6 +6,7 @@
 #include <vector>
 #include <list>
 #include <iostream>
+#include <map>
 using namespace std;
 
 class Personaje
@@ -15,6 +16,8 @@ class Personaje
         vector<SDL_Texture*>texturas;
         vector<SDL_Texture*>texturas_left;
         vector<SDL_Texture*>texturas_right;
+        string textura_actual;
+        map< string, vector<SDL_Texture*>* > mapa_texturas;
         SDL_Texture* hitbox_azul;
         SDL_Texture* hitbox_roja;
         SDL_Rect rect,hitbox;

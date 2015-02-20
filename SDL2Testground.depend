@@ -659,3 +659,55 @@
 1424454142 source:/home/rnexer/Programacion 3/beatemup/Sho.cpp
 	"Sho.h"
 
+1424454928 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Enemigo.cpp
+	"Enemigo.h"
+
+1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Enemigo.h
+	"Personaje.h"
+
+1424456477 /home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	<list>
+	<iostream>
+	<map>
+
+1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoAzul.cpp
+	"EnemigoAzul.h"
+
+1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoAzul.h
+	"Enemigo.h"
+
+1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoRojo.cpp
+	"EnemigoRojo.h"
+
+1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoRojo.h
+	"Enemigo.h"
+
+1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoVerde.cpp
+	"EnemigoVerde.h"
+
+1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoVerde.h
+	"Enemigo.h"
+
+1424455267 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/main.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	<vector>
+	<list>
+	"Sho.h"
+	"EnemigoAzul.h"
+	"EnemigoVerde.h"
+	"EnemigoRojo.h"
+
+1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.h
+	"Personaje.h"
+
+1424456757 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.cpp
+	"Personaje.h"
+
+1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.cpp
+	"Sho.h"
+

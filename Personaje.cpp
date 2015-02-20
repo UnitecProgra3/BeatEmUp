@@ -14,11 +14,17 @@ Personaje::~Personaje()
 
 void Personaje::draw(SDL_Renderer* renderer)
 {
-    SDL_RenderCopy(renderer, texturas_left[animacion], NULL, &rect);
+    vector<SDL_Texture*> *vector_textura_actual_temp = mapa_texturas[textura_actual];
+
+    SDL_Texture* textura_actual_temp = (*vector_textura_actual_temp)[animacion];
+
+    SDL_QueryTexture( textura_actual_temp, NULL, NULL, &rect.w, &rect.h);
+
+    SDL_RenderCopy(renderer, textura_actual_temp, NULL, &rect);
     if(frame%100==0)
     {
         animacion++;
-        if(animacion>=texturas.size())
+        if(animacion>=(*vector_textura_actual_temp).size())
             animacion=0;
     }
     hitbox.x = rect.x + rect.w/2 - hitbox.w/2;
@@ -34,8 +40,6 @@ void Personaje::draw(SDL_Renderer* renderer)
 
 void Personaje::init(SDL_Renderer* renderer, list<Personaje*> *personajes)
 {
-    SDL_QueryTexture(texturas[0], NULL, NULL, &rect.w, &rect.h);
-
     frame = 0;
     animacion = 0;
     hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
@@ -72,6 +76,14 @@ void Personaje::attackCheck()
                 if(colision((*i)->hitbox))
                 {
                     cout<<"Colision! "<< frame <<endl;
+                    cout<< (*i)->hitbox.x <<endl;
+                    cout<< (*i)->hitbox.y <<endl;
+                    cout<< (*i)->hitbox.w <<endl;
+                    cout<< (*i)->hitbox.h <<endl;
+                    cout<< hitbox.x <<endl;
+                    cout<< hitbox.y <<endl;
+                    cout<< hitbox.w <<endl;
+                    cout<< hitbox.h <<endl;
                     //personajes->erase(i);
                     (*i)->muerto = true;
                 }

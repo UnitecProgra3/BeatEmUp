@@ -12,8 +12,13 @@ Sho::Sho(SDL_Renderer* renderer,list<Personaje*> *personajes)
     texturas_left.push_back(IMG_LoadTexture(renderer,"Sho/standing_left/3.png"));
     texturas_left.push_back(IMG_LoadTexture(renderer,"Sho/standing_left/4.png"));
 
-    rect.x = 100;
-    rect.y = 250;
+    mapa_texturas["left"]=&texturas_left;
+    mapa_texturas["right"]=&texturas;
+
+    textura_actual = "right";
+
+    rect.x = 0;
+    rect.y = 0;
 
     init(renderer,personajes);
 }
@@ -32,6 +37,7 @@ void Sho::act()
     if(currentKeyStates[SDL_SCANCODE_Z])
     {
         rect.x--;
+        textura_actual = "left";
     }
 
     if(currentKeyStates[SDL_SCANCODE_S])
@@ -42,6 +48,7 @@ void Sho::act()
     if(currentKeyStates[SDL_SCANCODE_D])
     {
         rect.x++;
+        textura_actual = "right";
     }
 
     attackCheck();
