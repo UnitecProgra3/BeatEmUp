@@ -7,6 +7,11 @@ EnemigoAzul::EnemigoAzul(SDL_Renderer* renderer, list<Personaje*> *personajes)
     texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/3.png"));
     texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/4.png"));
 
+    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/1.png"));
+    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/2.png"));
+    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/3.png"));
+    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/4.png"));
+
     rect.x = 100;
     rect.y = 250;
 
