@@ -42,18 +42,40 @@ void Personaje::init(SDL_Renderer* renderer, list<Personaje*> *personajes)
     hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");
 
     this->personajes = personajes;
+
+    muerto = false;
 }
 
 bool Personaje::colision(SDL_Rect param)
 {
-    if(param.x + param.w < rect.x
-        || param.x > rect.x + rect.w
-        || param.y + param.h < rect.y
-        || param.y > rect.y + rect.h)
+    if(param.x + param.w < hitbox.x
+        || param.x > hitbox.x + hitbox.w
+        || param.y + param.h < hitbox.y
+        || param.y > hitbox.y + hitbox.h)
         return false;
     else
         return true;
 }
 
-
-
+void Personaje::attackCheck()
+{
+    if(atacando)
+    {
+        //detecto colision con los demas personajes
+        list<Personaje*>::iterator i;
+        for(i= personajes->begin();
+            i!=personajes->end();
+            i++)
+        {
+            if((*i)!=this)
+            {
+                if(colision((*i)->hitbox))
+                {
+                    cout<<"Colision! "<< frame <<endl;
+                    //personajes->erase(i);
+                    (*i)->muerto = true;
+                }
+            }
+        }
+    }
+}

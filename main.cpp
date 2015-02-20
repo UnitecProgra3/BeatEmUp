@@ -90,6 +90,15 @@ int main( int argc, char* args[] )
                 p++)
             (*p)->draw(renderer);
 
+        for(list<Personaje*>::iterator p=personajes.begin();
+                p!=personajes.end();
+                p++)
+            if((*p)->muerto)
+            {
+                personajes.erase(p);
+                p--;
+            }
+
         SDL_RenderPresent(renderer);
 
         frame++;

@@ -25,6 +25,8 @@ void EnemigoAzul::act()
         atacando = true;
     else
         atacando = false;
+
+    attackCheck();
 }
 
 

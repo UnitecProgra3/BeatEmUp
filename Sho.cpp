@@ -39,23 +39,7 @@ void Sho::act()
         rect.x++;
     }
 
-    if(atacando)
-    {
-        //detecto colision con los demas personajes
-        list<Personaje*>::iterator i;
-        for(i= personajes->begin();
-            i!=personajes->end();
-            i++)
-        {
-            if((*i)!=this)
-            {
-                if(colision((*i)->rect))
-                {
-                    cout<<"Colision! "<< frame <<endl;
-                }
-            }
-        }
-    }
+    attackCheck();
 }
 
 Sho::~Sho()
