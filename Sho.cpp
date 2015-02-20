@@ -2,21 +2,33 @@
 
 Sho::Sho(SDL_Renderer* renderer,list<Personaje*> *personajes)
 {
-    vector<SDL_Texture*>*texturas = new vector<SDL_Texture*>();
-    vector<SDL_Texture*>*texturas_left = new vector<SDL_Texture*>();
+    mapa_texturas["left"] = new vector<SDL_Texture*>();
+    mapa_texturas["right"] = new vector<SDL_Texture*>();
+    mapa_texturas["walk_right"] = new vector<SDL_Texture*>();
+    mapa_texturas["walk_left"] = new vector<SDL_Texture*>();
 
-    texturas->push_back(IMG_LoadTexture(renderer,"Sho/standing/1.png"));
-    texturas->push_back(IMG_LoadTexture(renderer,"Sho/standing/2.png"));
-    texturas->push_back(IMG_LoadTexture(renderer,"Sho/standing/3.png"));
-    texturas->push_back(IMG_LoadTexture(renderer,"Sho/standing/4.png"));
+    mapa_texturas["right"]->push_back(IMG_LoadTexture(renderer,"Sho/standing/1.png"));
+    mapa_texturas["right"]->push_back(IMG_LoadTexture(renderer,"Sho/standing/2.png"));
+    mapa_texturas["right"]->push_back(IMG_LoadTexture(renderer,"Sho/standing/3.png"));
+    mapa_texturas["right"]->push_back(IMG_LoadTexture(renderer,"Sho/standing/4.png"));
 
-    texturas_left->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/1.png"));
-    texturas_left->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/2.png"));
-    texturas_left->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/3.png"));
-    texturas_left->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/4.png"));
+    mapa_texturas["left"]->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/1.png"));
+    mapa_texturas["left"]->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/2.png"));
+    mapa_texturas["left"]->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/3.png"));
+    mapa_texturas["left"]->push_back(IMG_LoadTexture(renderer,"Sho/standing_left/4.png"));
 
-    mapa_texturas["left"] = texturas_left;
-    mapa_texturas["right"] = texturas;
+    mapa_texturas["walk_right"]->push_back(IMG_LoadTexture(renderer,"Sho/walk/1.png"));
+    mapa_texturas["walk_right"]->push_back(IMG_LoadTexture(renderer,"Sho/walk/2.png"));
+    mapa_texturas["walk_right"]->push_back(IMG_LoadTexture(renderer,"Sho/walk/3.png"));
+    mapa_texturas["walk_right"]->push_back(IMG_LoadTexture(renderer,"Sho/walk/4.png"));
+    mapa_texturas["walk_right"]->push_back(IMG_LoadTexture(renderer,"Sho/walk/5.png"));
+
+    mapa_texturas["walk_left"]->push_back(IMG_LoadTexture(renderer,"Sho/walk_left/1.png"));
+    mapa_texturas["walk_left"]->push_back(IMG_LoadTexture(renderer,"Sho/walk_left/2.png"));
+    mapa_texturas["walk_left"]->push_back(IMG_LoadTexture(renderer,"Sho/walk_left/3.png"));
+    mapa_texturas["walk_left"]->push_back(IMG_LoadTexture(renderer,"Sho/walk_left/4.png"));
+    mapa_texturas["walk_left"]->push_back(IMG_LoadTexture(renderer,"Sho/walk_left/5.png"));
+
 
     vector_actual_str = "right";
 
@@ -36,14 +48,7 @@ void Sho::act()
     {
         rect.y--;
     }
-
-    if(currentKeyStates[SDL_SCANCODE_Z])
-    {
-        rect.x--;
-        vector_actual_str = "left";
-    }
-
-    if(currentKeyStates[SDL_SCANCODE_S])
+    else if(currentKeyStates[SDL_SCANCODE_S])
     {
         rect.y++;
     }
@@ -51,7 +56,20 @@ void Sho::act()
     if(currentKeyStates[SDL_SCANCODE_D])
     {
         rect.x++;
-        vector_actual_str = "right";
+        setAnimacion("walk_right");
+    }
+    else if(currentKeyStates[SDL_SCANCODE_Z])
+    {
+        rect.x--;
+        setAnimacion("walk_left");
+    }
+    else
+    {
+        if(vector_actual_str == "walk_right")
+            vector_actual_str = "right";
+
+        if(vector_actual_str == "walk_left")
+            vector_actual_str = "left";
     }
 
     attackCheck();

@@ -665,7 +665,7 @@
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Enemigo.h
 	"Personaje.h"
 
-1424457589 /home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.h
+1424458657 /home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<vector>
@@ -705,9 +705,9 @@
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.h
 	"Personaje.h"
 
-1424457537 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.cpp
+1424458820 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.cpp
 	"Personaje.h"
 
-1424457823 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.cpp
+1424458757 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.cpp
 	"Sho.h"
 

@@ -91,3 +91,21 @@ void Personaje::attackCheck()
         }
     }
 }
+
+void Personaje::setAnimacion(string nombre)
+{
+    if(this->vector_actual_str != nombre)
+        this->textura_actual_int = 0;
+
+    this->vector_actual_str = nombre;
+}
+
+
+
+
+
+
+
+
+
+

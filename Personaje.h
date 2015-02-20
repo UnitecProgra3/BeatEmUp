@@ -28,6 +28,7 @@ class Personaje
         void init(SDL_Renderer* renderer, list<Personaje*> *personajes);
         bool colision(SDL_Rect param);
         void attackCheck();
+        void setAnimacion(string nombre);
 
         Personaje();
         virtual ~Personaje();
