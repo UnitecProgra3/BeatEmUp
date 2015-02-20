@@ -2,20 +2,23 @@
 
 EnemigoAzul::EnemigoAzul(SDL_Renderer* renderer, list<Personaje*> *personajes)
 {
-    texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/1.png"));
-    texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/2.png"));
-    texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/3.png"));
-    texturas.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/4.png"));
+    vector<SDL_Texture*>*texturas = new vector<SDL_Texture*>();
+    vector<SDL_Texture*>*texturas_left = new vector<SDL_Texture*>();
 
-    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/1.png"));
-    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/2.png"));
-    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/3.png"));
-    texturas_left.push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/4.png"));
+    texturas->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/1.png"));
+    texturas->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/2.png"));
+    texturas->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/3.png"));
+    texturas->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing/4.png"));
 
-    mapa_texturas["left"]=&texturas_left;
-    mapa_texturas["right"]=&texturas;
+    texturas_left->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/1.png"));
+    texturas_left->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/2.png"));
+    texturas_left->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/3.png"));
+    texturas_left->push_back(IMG_LoadTexture(renderer,"EnemigoAzul/standing_left/4.png"));
 
-    textura_actual = "right";
+    mapa_texturas["left"]=texturas_left;
+    mapa_texturas["right"]=texturas;
+
+    vector_actual_str = "right";
 
     rect.x = 100;
     rect.y = 250;

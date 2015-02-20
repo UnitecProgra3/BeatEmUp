@@ -13,16 +13,13 @@ class Personaje
 {
     public:
         list<Personaje*> *personajes;
-        vector<SDL_Texture*>texturas;
-        vector<SDL_Texture*>texturas_left;
-        vector<SDL_Texture*>texturas_right;
-        string textura_actual;
+        string vector_actual_str;
         map< string, vector<SDL_Texture*>* > mapa_texturas;
         SDL_Texture* hitbox_azul;
         SDL_Texture* hitbox_roja;
         SDL_Rect rect,hitbox;
         int frame;
-        int animacion;
+        int textura_actual_int;
         bool atacando;
         bool muerto;
 

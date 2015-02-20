@@ -14,18 +14,18 @@ Personaje::~Personaje()
 
 void Personaje::draw(SDL_Renderer* renderer)
 {
-    vector<SDL_Texture*> *vector_textura_actual_temp = mapa_texturas[textura_actual];
+    vector<SDL_Texture*> *vector_textura_actual_temp = mapa_texturas[vector_actual_str];
 
-    SDL_Texture* textura_actual_temp = (*vector_textura_actual_temp)[animacion];
+    SDL_Texture* textura_actual_temp = (*vector_textura_actual_temp)[textura_actual_int];
 
     SDL_QueryTexture( textura_actual_temp, NULL, NULL, &rect.w, &rect.h);
 
     SDL_RenderCopy(renderer, textura_actual_temp, NULL, &rect);
     if(frame%100==0)
     {
-        animacion++;
-        if(animacion>=(*vector_textura_actual_temp).size())
-            animacion=0;
+        textura_actual_int++;
+        if(textura_actual_int>=(*vector_textura_actual_temp).size())
+            textura_actual_int=0;
     }
     hitbox.x = rect.x + rect.w/2 - hitbox.w/2;
     hitbox.y = rect.y + rect.h - hitbox.h/2;
@@ -41,7 +41,7 @@ void Personaje::draw(SDL_Renderer* renderer)
 void Personaje::init(SDL_Renderer* renderer, list<Personaje*> *personajes)
 {
     frame = 0;
-    animacion = 0;
+    textura_actual_int = 0;
     hitbox_azul = IMG_LoadTexture(renderer,"hitbox/azul.png");
     hitbox_roja = IMG_LoadTexture(renderer,"hitbox/roja.png");
 

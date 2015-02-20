@@ -665,7 +665,7 @@
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Enemigo.h
 	"Personaje.h"
 
-1424456477 /home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.h
+1424457589 /home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<vector>
@@ -673,19 +673,19 @@
 	<iostream>
 	<map>
 
-1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoAzul.cpp
+1424457769 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoAzul.cpp
 	"EnemigoAzul.h"
 
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoAzul.h
 	"Enemigo.h"
 
-1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoRojo.cpp
+1424457788 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoRojo.cpp
 	"EnemigoRojo.h"
 
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoRojo.h
 	"Enemigo.h"
 
-1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoVerde.cpp
+1424457805 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoVerde.cpp
 	"EnemigoVerde.h"
 
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/EnemigoVerde.h
@@ -705,9 +705,9 @@
 1424454928 /home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.h
 	"Personaje.h"
 
-1424456757 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.cpp
+1424457537 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Personaje.cpp
 	"Personaje.h"
 
-1424456477 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.cpp
+1424457823 source:/home/turupawn/Projects/Clases/_Progra3/Beup2/Sho.cpp
 	"Sho.h"
 
