@@ -25,8 +25,20 @@ void Personaje::draw(SDL_Renderer* renderer)
     {
         textura_actual_int++;
         if(textura_actual_int>=(*vector_textura_actual_temp).size())
+        {
             textura_actual_int=0;
+            if(vector_actual_str != "walk_right" && vector_actual_str != "walk_left")
+            {
+                if(vector_actual_str == "punch_right")
+                    setAnimacion("right");
+                if(vector_actual_str == "punch_left")
+                    setAnimacion("left");
+            }
+        }
     }
+
+
+
     hitbox.x = rect.x + rect.w/2 - hitbox.w/2;
     hitbox.y = rect.y + rect.h - hitbox.h/2;
     SDL_RenderCopy(renderer, hitbox_azul, NULL, &hitbox);
@@ -95,7 +107,23 @@ void Personaje::attackCheck()
 void Personaje::setAnimacion(string nombre)
 {
     if(this->vector_actual_str != nombre)
+    {
         this->textura_actual_int = 0;
+
+
+        vector<SDL_Texture*> *vector_textura_actual_temp = mapa_texturas[nombre];
+
+        SDL_Texture* textura_actual_temp = (*vector_textura_actual_temp)[textura_actual_int];
+
+        int w_ant = rect.w;
+        int h_ant = rect.h;
+
+        SDL_QueryTexture( textura_actual_temp, NULL, NULL, &rect.w, &rect.h);
+
+        rect.x -= (rect.w-w_ant)/2;
+        rect.y -= (rect.h-h_ant);
+
+    }
 
     this->vector_actual_str = nombre;
 }

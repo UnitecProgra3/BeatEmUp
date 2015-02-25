@@ -68,10 +68,10 @@ int main( int argc, char* args[] )
             }
         }
 
-//        if(frame%200==0)
-//        {
-//            personajes.push_back(new EnemigoAzul(renderer,&personajes));
-//        }
+        if(frame%1000==0)
+        {
+            personajes.push_back(new EnemigoAzul(renderer,&personajes));
+        }
 
         for(list<Personaje*>::iterator p=personajes.begin();
                 p!=personajes.end();
