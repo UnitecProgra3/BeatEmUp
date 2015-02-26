@@ -96,7 +96,7 @@ int main( int argc, char* args[] )
             if((*p)->muerto)
             {
                 personajes.erase(p);
-                p--;
+                break;
             }
 
         SDL_RenderPresent(renderer);
