@@ -17,27 +17,8 @@ SDL_Event Event;
 SDL_Texture *background;
 SDL_Rect rect_background;
 
-
-int main( int argc, char* args[] )
+void loopJuego()
 {
-    //Init SDL
-    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
-    {
-        return 10;
-    }
-    //Creates a SDL Window
-    if((window = SDL_CreateWindow("Image Loading", 100, 100, 1024/*WIDTH*/, 768/*HEIGHT*/, SDL_WINDOW_RESIZABLE | SDL_RENDERER_PRESENTVSYNC)) == NULL)
-    {
-        return 20;
-    }
-    //SDL Renderer
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED );
-    if (renderer == NULL)
-    {
-        std::cout << SDL_GetError() << std::endl;
-        return 30;
-    }
-
     //Init textures
     int w=0,h=0;
     background = IMG_LoadTexture(renderer,"fondo.png");
@@ -64,7 +45,7 @@ int main( int argc, char* args[] )
         {
             if(Event.type == SDL_QUIT)
             {
-                return 0;
+                return;
             }
         }
 
@@ -103,6 +84,33 @@ int main( int argc, char* args[] )
 
         frame++;
     }
+}
+
+void mainMenu()
+{
+}
+
+int main( int argc, char* args[] )
+{
+    //Init SDL
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
+    {
+        return 10;
+    }
+    //Creates a SDL Window
+    if((window = SDL_CreateWindow("Image Loading", 100, 100, 1024/*WIDTH*/, 768/*HEIGHT*/, SDL_WINDOW_RESIZABLE | SDL_RENDERER_PRESENTVSYNC)) == NULL)
+    {
+        return 20;
+    }
+    //SDL Renderer
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED );
+    if (renderer == NULL)
+    {
+        std::cout << SDL_GetError() << std::endl;
+        return 30;
+    }
+
+    mainMenu();
 
 	return 0;
 }
