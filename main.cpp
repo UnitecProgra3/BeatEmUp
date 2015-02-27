@@ -17,6 +17,7 @@ SDL_Event Event;
 SDL_Texture *background;
 SDL_Rect rect_background;
 
+
 void loopJuego()
 {
     //Init textures
@@ -31,7 +32,6 @@ void loopJuego()
 
     list<Personaje*> personajes;
     personajes.push_back(new Sho(renderer,&personajes));
-//    personajes.push_back(new EnemigoAzul(renderer,&personajes));
     personajes.push_back(new EnemigoVerde(renderer,&personajes));
     personajes.push_back(new EnemigoRojo(renderer,&personajes));
 
@@ -77,7 +77,7 @@ void loopJuego()
             if((*p)->muerto)
             {
                 personajes.erase(p);
-                p--;
+                break;
             }
 
         SDL_RenderPresent(renderer);
@@ -114,7 +114,3 @@ int main( int argc, char* args[] )
 
 	return 0;
 }
-
-
-
-
